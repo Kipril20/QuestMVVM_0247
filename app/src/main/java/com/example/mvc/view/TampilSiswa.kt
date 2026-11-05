@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -38,13 +38,15 @@ fun TampilSiswa(
         Pair(stringResource(R.string.alamat), statusUiSiswa.alamat)
     )
 
-    Scaffold(modifier = Modifier,
-        {
+    Scaffold(
+        modifier = Modifier,
+        topBar = {
             TopAppBar(
                 title = { Text(stringResource(id = R.string.detail), color = Color.White) },
-                colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(id = R.color.purple_500)),
+                colors = TopAppBarDefaults.topAppBarColors(colorResource(id = R.color.purple_500)),
             )
-        }) { isiRuang ->
+        }
+    ) { isiRuang ->
         Column(
             modifier = Modifier.padding(isiRuang),
             verticalArrangement = Arrangement.SpaceBetween
@@ -58,7 +60,7 @@ fun TampilSiswa(
                         Text(item.first.uppercase(), fontSize = 16.sp)
                         Text(text = item.second, fontWeight = FontWeight.Bold, fontSize = 16.sp)
                     }
-                    Divider(thickness = dimensionResource(R.dimen.thickness_divider))
+                    HorizontalDivider(thickness = dimensionResource(R.dimen.thickness_divider))
                 }
                 Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
                 Button(
