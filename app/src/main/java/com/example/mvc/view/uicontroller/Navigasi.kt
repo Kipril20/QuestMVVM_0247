@@ -10,6 +10,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.mvc.view.FormSiswa
+import com.example.mvc.view.TampilSiswa
 import java.lang.reflect.Modifier
 
 enum class Navigasi {
@@ -45,7 +46,13 @@ fun SiswaApp(
                         }
                     )
                 }
+                composable(route = Navigasi.Detail.name) {
+                    TampilSiswa(
+                        //edit 5 : parameter statusUiSiswa
+                        statusUiSiswa = uiState.value,
+                        onBackButtonClicked = { cancelAndBackToFormulir(navController) }
+                    )
+            }
         }
-        )
     }
 }
