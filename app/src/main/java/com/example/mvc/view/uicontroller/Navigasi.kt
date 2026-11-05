@@ -9,6 +9,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.mvc.model.DataJK.JenisK
 import com.example.mvc.view.FormSiswa
 import com.example.mvc.view.TampilSiswa
 import java.lang.reflect.Modifier
